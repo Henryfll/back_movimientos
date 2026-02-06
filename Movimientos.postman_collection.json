@@ -1,0 +1,605 @@
+{
+  "info": {
+    "_postman_id": "77db1182-3cbf-4b04-88be-96151b180a21",
+    "name": "Movimientos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "10258611"
+  },
+  "item": [
+    {
+      "name": "Crear Cliente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Jose Lema\",\n  \"genero\": \"M\",\n  \"edad\": 28,\n  \"identificacion\": \"1234567892\",\n  \"direccion\": \"Otavalo sn y principal\",\n  \"telefono\": \"098254785\",\n  \"contrasena\": \"1234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/clientes",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "clientes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Clientes",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/clientes?pagina=0&tamanio=10",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "clientes"
+          ],
+          "query": [
+            {
+              "key": "pagina",
+              "value": "0"
+            },
+            {
+              "key": "tamanio",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Cliente",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Marianela Montalvo\",\n  \"genero\": \"F\",\n  \"edad\":30,\n  \"identificacion\": \"5587946859\",\n  \"direccion\": \"Amazonas y NNUU\",\n  \"telefono\": \"097548965\",\n  \"contrasena\": \"5678\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/clientes/1",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "clientes",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Cliente",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/clientes/1",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "clientes",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cliente por Id",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/clientes/2",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "clientes",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear Cuenta",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"numeroCuenta\": \"478758\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"saldoInicial\": 2000,\n  \"clienteId\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/cuentas",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "cuentas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cuentas por ClienteId",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/cuentas/findbyClientId/2",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "cuentas",
+            "findbyClientId",
+            "2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Cuenta",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/cuentas/11111111111",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "cuentas",
+            "11111111111"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Cuenta por Numero",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/cuentas/478758",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "cuentas",
+            "478758"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Movimientos por Cuenta",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/movimientos/cuenta/478758",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "movimientos",
+            "cuenta",
+            "478758"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear Movimiento",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"numeroCuenta\": \"478758\",\n  \"tipoMovimiento\": \"DEBITO\",\n  \"valor\": 0\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/movimientos",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "movimientos"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reporte Json",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/reportes?clienteId=2&fechaInicio=2026-02-01&fechaFin=2026-02-06",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "reportes"
+          ],
+          "query": [
+            {
+              "key": "clienteId",
+              "value": "2"
+            },
+            {
+              "key": "fechaInicio",
+              "value": "2026-02-01"
+            },
+            {
+              "key": "fechaFin",
+              "value": "2026-02-06"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reporte PDF",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/reportes/pdf?clienteId=2&fechaInicio=2026-02-01&fechaFin=2026-02-06",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "reportes",
+            "pdf"
+          ],
+          "query": [
+            {
+              "key": "clienteId",
+              "value": "2"
+            },
+            {
+              "key": "fechaInicio",
+              "value": "2026-02-01"
+            },
+            {
+              "key": "fechaFin",
+              "value": "2026-02-06"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Patch Clientes",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"string\",\n  \"genero\": \"string\",\n  \"edad\": 0,\n  \"identificacion\": \"string\",\n  \"direccion\": \"string\",\n  \"telefono\": \"string\",\n  \"contrasena\": \"string\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/clientes/10",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "clientes",
+            "10"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Cuenta",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"numeroCuenta\": \"string\",\n  \"tipoCuenta\": \"AHORROS\",\n  \"saldoInicial\": 0,\n  \"clienteId\": 0\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/cuentas/1215465",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "cuentas",
+            "1215465"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Cuentas",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": ""
+          }
+        ],
+        "url": {
+          "raw": "http://{{servidor}}:{{puerto}}/movimientos/api/cuentas?pagina=0&tamanio=10",
+          "protocol": "http",
+          "host": [
+            "{{servidor}}"
+          ],
+          "port": "{{puerto}}",
+          "path": [
+            "movimientos",
+            "api",
+            "cuentas"
+          ],
+          "query": [
+            {
+              "key": "pagina",
+              "value": "0"
+            },
+            {
+              "key": "tamanio",
+              "value": "10"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "servidor",
+      "value": ""
+    },
+    {
+      "key": "puerto",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}
